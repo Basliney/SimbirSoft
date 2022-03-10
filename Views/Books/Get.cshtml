@@ -1,0 +1,14 @@
+﻿<h2>@ViewBag.Head</h2>
+@{
+    foreach (var book in Model)
+    {
+        <div>
+            <h3>ID: @book.Id</h3>
+            <h2>Название: @book.Title</h2>
+            <h3>Жанр: @book.Genre</h3>
+            <h3>ID автора: @book.AuthorID</h3>
+            <h3>Имя автора: @book.Author.Name</h3>
+            <h3>Фамилия автора: @book.Author.Surname</h3>
+        </div>
+    }
+}

@@ -1,0 +1,13 @@
+﻿<h2>@ViewBag.Head</h2>
+@{
+    foreach (var human in Model)
+    {
+        <div>
+            <h3>ID: @human.Id</h3>
+            <h2>Фамилия: @human.Surname</h2>
+            <h3>Имя: @human.Name</h3>
+            <h3>Отчество: @human.Patronymic</h3>
+            <h3>Дата рождения: @human.Birthday</h3>
+        </div>
+    }
+}
