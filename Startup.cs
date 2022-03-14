@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Builder;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using SimbirSoft_Appl.DataLists;
 using SimbirSoft_Appl.Middlewares;
 
 namespace SimbirSoft_Appl
@@ -16,6 +18,9 @@ namespace SimbirSoft_Appl
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
             services.AddControllers();
             services.AddMvc();//Добавляем сервисы MVC
         }

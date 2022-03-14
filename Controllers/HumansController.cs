@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SimbirSoft_Appl.Models;
-using SimbirSoft_Appl.StaticData;
+using SimbirSoft_Appl.DataLists;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,14 +27,14 @@ namespace SimbirSoft_Appl.Controllers
             switch (sort)
             {
                 default:
-                    return Data.People;
+                    return DataLists.People;
                 case 2:
-                    allHumans = Data.People.Where(x => x.IsAuthor == true).ToList();
+                    allHumans = DataLists.People.Where(x => x.IsAuthor == true).ToList();
                     return allHumans;
                 case 3:
                     if (find_text != null)
                     {
-                        allHumans = Data.People.Where(x => x.Name.ToLower().Contains(find_text.ToLower())
+                        allHumans = DataLists.People.Where(x => x.Name.ToLower().Contains(find_text.ToLower())
                             || x.Surname.ToLower().Contains(find_text.ToLower()) || x.Patronymic.ToLower().Contains(find_text.ToLower())).ToList();
                     }
                     return allHumans;
@@ -63,7 +63,7 @@ namespace SimbirSoft_Appl.Controllers
                 return BadRequest();
             }
             human.Id = MaxIndex();
-            Data.People.Add(human);
+            DataLists.People.Add(human);
             return CreatedAtAction(nameof(Post), human);
         }
 
@@ -71,7 +71,7 @@ namespace SimbirSoft_Appl.Controllers
         {
             int maxIndex = 0;
 
-            foreach (HumanDto human in Data.People)
+            foreach (HumanDto human in DataLists.People)
             {
                 if (maxIndex < human.Id)
                 {
@@ -89,12 +89,12 @@ namespace SimbirSoft_Appl.Controllers
         public IActionResult Delete(int id)
         {
             HumanDto human;
-            human = Data.People.FirstOrDefault(x => x.Id == id);
+            human = DataLists.People.FirstOrDefault(x => x.Id == id);
             if (human == null)
             {
                 return BadRequest();
             }
-            Data.People.Remove(human);
+            DataLists.People.Remove(human);
             return Ok();
         }
     }

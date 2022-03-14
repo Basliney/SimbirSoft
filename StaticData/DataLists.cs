@@ -1,19 +1,18 @@
 ﻿using SimbirSoft_Appl.Models;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace SimbirSoft_Appl.StaticData
 {
-    public static class Data
+    public static class DataLists
     {
         public static List<BookDto> Books { get; set; }
         public static List<HumanDto> People { get; set; }
 
         public static List<LibraryCard> LibraryCards { get; set; }
 
-        static Data()
+        static DataLists()
         {
             // 2.1.3 Пустой статичный список LibraryCard
             LibraryCards = new List<LibraryCard>();

@@ -15,7 +15,7 @@ namespace SimbirSoft_Appl.Controllers
     {
         public ActionResult<List<LibraryCard>> Get()
         {
-            return Data.LibraryCards;
+            return DataLists.LibraryCards;
         }
 
         /// <summary>
@@ -30,14 +30,14 @@ namespace SimbirSoft_Appl.Controllers
             }
             libraryCard.Id = MaxIndex();
             libraryCard.PickedUp = DateTimeOffset.Now;
-            Data.LibraryCards.Add(libraryCard);
+            DataLists.LibraryCards.Add(libraryCard);
             return Ok();
         }
 
         private int MaxIndex()
         {
             int maxIndex = 0;
-            foreach(var libraryCard in Data.LibraryCards)
+            foreach(var libraryCard in DataLists.LibraryCards)
             {
                 if (maxIndex < libraryCard.Id)
                 {

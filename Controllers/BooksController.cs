@@ -1,8 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SimbirSoft_Appl.Models;
-using SimbirSoft_Appl.StaticData;
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -28,10 +25,10 @@ namespace SimbirSoft_Appl.Controllers
             switch (sort)
             {
                 case 0:
-                    allBooks = Data.Books;
+                    allBooks = DataLists.Books;
                     break;
                 default:
-                    allBooks = Data.Books.Where(x => x.AuthorID == authorID).ToList();
+                    allBooks = DataLists.Books.Where(x => x.AuthorID == authorID).ToList();
                     break;
             }
             if (allBooks.Count == 0)
@@ -54,9 +51,9 @@ namespace SimbirSoft_Appl.Controllers
                 return NoContent();
             }
             book.Id = MaxIndex();
-            book.Author = Data.People.FirstOrDefault(x => x.Id == authorID);
+            book.Author = DataLists.People.FirstOrDefault(x => x.Id == authorID);
             book.AuthorID = authorID;
-            Data.Books.Add(book);
+            DataLists.Books.Add(book);
             return CreatedAtAction(nameof(Post), book);
         }
 
@@ -70,11 +67,11 @@ namespace SimbirSoft_Appl.Controllers
             switch (numberOfSort)
             {
                 case 0:
-                    return Data.Books.OrderBy(x => x.Title).ToList();
+                    return DataLists.Books.OrderBy(x => x.Title).ToList();
                 case 1:
-                    return Data.Books.OrderBy(x => x.Author.Surname).ToList();
+                    return DataLists.Books.OrderBy(x => x.Author.Surname).ToList();
                 case 2:
-                    return Data.Books.OrderBy(x => x.Genre).ToList();
+                    return DataLists.Books.OrderBy(x => x.Genre).ToList();
                 default:
                     return NoContent();
             }
@@ -84,7 +81,7 @@ namespace SimbirSoft_Appl.Controllers
         {
             int maxIndex = 0;
 
-            foreach (BookDto book in Data.Books)
+            foreach (BookDto book in DataLists.Books)
             {
                 if (maxIndex < book.Id)
                 {
@@ -101,10 +98,10 @@ namespace SimbirSoft_Appl.Controllers
         /// <returns>Представление</returns>
         public ActionResult Delete(int id)
         {
-            BookDto book = Data.Books.FirstOrDefault(x => x.Id == id);
+            BookDto book = DataLists.Books.FirstOrDefault(x => x.Id == id);
             if (book != null)
             {
-                Data.Books.Remove(book);
+                DataLists.Books.Remove(book);
                 return Ok();
             }
             return NotFound();

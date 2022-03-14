@@ -41,3 +41,14 @@ C:\Users\PC\source\repos\SimbirSoft_Appl\SimbirSoft_Appl\obj\Debug\net5.0\Razor\
 C:\Users\PC\source\repos\SimbirSoft_Appl\SimbirSoft_Appl\obj\Debug\net5.0\Razor\Views\Books\Post.cshtml.g.cs
 C:\Users\PC\source\repos\SimbirSoft_Appl\SimbirSoft_Appl\obj\Debug\net5.0\Razor\Views\Books\Delete.cshtml.g.cs
 C:\Users\PC\source\repos\SimbirSoft_Appl\SimbirSoft_Appl\obj\Debug\net5.0\Razor\Views\LibraryCards\Post.cshtml.g.cs
+C:\Users\PC\source\repos\SimbirSoft\obj\Debug\net5.0\SimbirSoft_Appl.csproj.AssemblyReference.cache
+C:\Users\PC\source\repos\SimbirSoft\obj\Debug\net5.0\SimbirSoft_Appl.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PC\source\repos\SimbirSoft\obj\Debug\net5.0\SimbirSoft_Appl.AssemblyInfoInputs.cache
+C:\Users\PC\source\repos\SimbirSoft\obj\Debug\net5.0\SimbirSoft_Appl.AssemblyInfo.cs
+C:\Users\PC\source\repos\SimbirSoft\obj\Debug\net5.0\SimbirSoft_Appl.csproj.CoreCompileInputs.cache
+C:\Users\PC\source\repos\SimbirSoft\obj\Debug\net5.0\SimbirSoft_Appl.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\PC\source\repos\SimbirSoft\obj\Debug\net5.0\SimbirSoft_Appl.RazorAssemblyInfo.cache
+C:\Users\PC\source\repos\SimbirSoft\obj\Debug\net5.0\SimbirSoft_Appl.RazorAssemblyInfo.cs
+C:\Users\PC\source\repos\SimbirSoft\obj\Debug\net5.0\SimbirSoft_Appl.dll
+C:\Users\PC\source\repos\SimbirSoft\obj\Debug\net5.0\refint\SimbirSoft_Appl.dll
+C:\Users\PC\source\repos\SimbirSoft\obj\Debug\net5.0\SimbirSoft_Appl.pdb
